@@ -1,0 +1,19 @@
+# やさしい言葉のWeb空間
+
+静かな声がそっと背中を押すような、やさしい言葉を集めたWebページです。  
+ひとつひとつの言葉が、小さな癒しとなって届きますように。
+
+## 特徴
+
+- 穏やかなデザインとやさしいフォント（Kosugi Maru）で構成
+- SEO対応とSNSでのシェア最適化（OGタグ対応）
+- Google Analytics による閲覧状況の把握
+- noteや広告との連携を視野に設計
+
+## 使用フォント
+
+- [Kosugi Maru](https://fonts.google.com/specimen/Kosugi+Maru)
+
+## ライセンス
+
+このプロジェクトは [MIT License](LICENSE) のもとで提供されています。

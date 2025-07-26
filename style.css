@@ -1,0 +1,47 @@
+html{
+    height: 100%;
+    background: linear-gradient(to bottom, #a4c0c0, #a6cdd2) !important; 
+}
+body{
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Hiragino Mincho ProN', serif;
+    background: linear-gradient(to bottom, #bae2e2, #85aeb6),url(images/bg.jpg) no-repeat center center;
+    background-size: cover;
+    background-blend-mode: lighten;
+}
+
+.shadow-word {
+    max-width: 80vw;
+    word-wrap: break-word;
+    position: absolute;
+    opacity: 0;
+    transform: translateY(10px);    
+    transition: opacity 2.5s ease-in, transform 2.5s ease-out;
+    font-size: 1.2rem;
+    color: #333;
+    animation: sway 6s ease-in-out infinite;
+    font-size: 30px;
+}
+
+@keyframes sway {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(1deg); }
+}
+
+@keyframes backgroundShift{
+    0% {babckground-position: 0% 50%}
+    100% {background-position: 100% 50%}
+}
+body{
+    animation:backgroundShift 60s ease-in-out infinite
+}
+
+@media screen and (max-width: 480px){
+    .shadow-word{
+        font-size: 20px;
+    }
+}
