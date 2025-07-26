@@ -13,7 +13,7 @@ const words = [
 ];
 
 let previousWord = "";
-let hasShownFirst = false;
+let hasInitialized = false;
 
 function getRandomWord() {
   let word;
@@ -32,44 +32,48 @@ function showShadowWord(centered = false) {
   word.className = "shadow-word";
   word.textContent = getRandomWord();
 
+  // 基本スタイル
   word.style.position = "absolute";
   word.style.opacity = "0";
-  word.style.transition = "opacity 1s ease";
+  word.style.transition = "opacity 1.2s ease";
   word.style.textAlign = "center";
   word.style.maxWidth = "90vw";
-  word.style.lineHeight = "1.5";
+  word.style.lineHeight = "1.6";
   word.style.whiteSpace = "pre-wrap";
   word.style.color = "#2b2b2b";
   word.style.fontSize = "1.6rem";
+  word.style.zIndex = "10";
 
   if (centered) {
+    // 初回のみ中央に表示
     word.style.top = "50%";
     word.style.left = "50%";
     word.style.transform = "translate(-50%, -50%)";
   } else {
-    word.style.top = Math.random() * window.innerHeight + "px";
-    word.style.left = Math.random() * window.innerWidth + "px";
+    // ランダム位置（以降）
+    word.style.top = `${Math.random() * window.innerHeight}px`;
+    word.style.left = `${Math.random() * window.innerWidth}px`;
   }
 
   area.appendChild(word);
-  setTimeout(() => { word.style.opacity = "0.4"; }, 100);
-  setTimeout(() => { word.style.opacity = "0"; }, 4000);
-  setTimeout(() => { word.remove(); }, 7000);
+
+  // ゆっくり表示 → 消えて → 削除
+  setTimeout(() => { word.style.opacity = "0.4"; }, 100);     // フェードイン
+  setTimeout(() => { word.style.opacity = "0"; }, 4000);      // フェードアウト
+  setTimeout(() => { word.remove(); }, 7000);                 // DOMから削除
 }
 
 window.addEventListener("load", () => {
-  // 初回：6秒後に中央表示
-  setTimeout(() => {
-    if (!hasShownFirst) {
-      showShadowWord(true); // 一度だけ中央に表示
-      hasShownFirst = true;
-    }
-  }, 6000);
+  if (hasInitialized) return;
+  hasInitialized = true;
 
-  // 以降：通常のランダム配置で定期表示
+  // 初回：ページ表示後すぐ中央に1回だけ表示
+  showShadowWord(true);
+
+  // 以降：7秒後から6秒間隔でランダム表示
   setTimeout(() => {
     setInterval(() => {
       showShadowWord(false);
     }, 6000);
-  }, 13000); // 初回が消えるタイミングに合わせて開始
+  }, 7000);
 });
