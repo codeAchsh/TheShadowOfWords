@@ -27,3 +27,28 @@ function showShadowWord() {
 }
 
 setInterval(showShadowWord, 6000);
+
+
+const isMobile = window.innerWidth <= 480;
+
+function showShadowWord() {
+  const area = document.getElementById("shadow-area");
+  const word = document.createElement("div");
+  word.textContent = words[Math.floor(Math.random() * words.length)];
+  word.className = "shadow-word";
+
+  if (isMobile) {
+    word.style.top = "50%";
+    word.style.left = "50%";
+    word.style.transform = "translate(-50%, -50%)";
+    word.style.textAlign = "center";
+  } else {
+    word.style.top = Math.random() * window.innerHeight + "px";
+    word.style.left = Math.random() * window.innerWidth + "px";
+  }
+
+  area.appendChild(word);
+  setTimeout(() => { word.style.opacity = 0.4 }, 100);
+  setTimeout(() => { word.style.opacity = 0 }, 4000);
+  setTimeout(() => { word.remove() }, 7000);
+}
