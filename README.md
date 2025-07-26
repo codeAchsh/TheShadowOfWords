@@ -10,10 +10,6 @@
 - Google Analytics による閲覧状況の把握
 - noteや広告との連携を視野に設計
 
-## 使用フォント
-
-- [Kosugi Maru](https://fonts.google.com/specimen/Kosugi+Maru)
-
 ## ライセンス
 
 このプロジェクトは [MIT License](LICENSE) のもとで提供されています。
