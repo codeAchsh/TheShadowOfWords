@@ -13,7 +13,7 @@ const words = [
 ];
 
 let previousWord = "";
-let isFirst = true;
+let hasShownFirst = false;
 
 function getRandomWord() {
   let word;
@@ -24,33 +24,52 @@ function getRandomWord() {
   return word;
 }
 
-function showShadowWord() {
+function showShadowWord(centered = false) {
   const area = document.getElementById("shadow-area");
+  if (!area) return;
+
   const word = document.createElement("div");
   word.className = "shadow-word";
   word.textContent = getRandomWord();
 
   word.style.position = "absolute";
+  word.style.opacity = "0";
+  word.style.transition = "opacity 1s ease";
+  word.style.textAlign = "center";
+  word.style.maxWidth = "90vw";
+  word.style.lineHeight = "1.5";
+  word.style.whiteSpace = "pre-wrap";
+  word.style.color = "#2b2b2b";
+  word.style.fontSize = "1.6rem";
 
-  if (isFirst && (window.innerWidth <= 480 || /iPhone|Android/.test(navigator.userAgent))) {
+  if (centered) {
     word.style.top = "50%";
     word.style.left = "50%";
     word.style.transform = "translate(-50%, -50%)";
-    word.style.textAlign = "center";
-    word.style.maxWidth = "90vw";
-    isFirst = false; // 以降は中央表示をやめる
   } else {
     word.style.top = Math.random() * window.innerHeight + "px";
     word.style.left = Math.random() * window.innerWidth + "px";
   }
 
   area.appendChild(word);
-  setTimeout(() => { word.style.opacity = 0.4 }, 100);
-  setTimeout(() => { word.style.opacity = 0 }, 4000);
-  setTimeout(() => { word.remove() }, 7000);
+  setTimeout(() => { word.style.opacity = "0.4"; }, 100);
+  setTimeout(() => { word.style.opacity = "0"; }, 4000);
+  setTimeout(() => { word.remove(); }, 7000);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  showShadowWord(); // 初回のみ中央表示
-  setInterval(showShadowWord, 6000); // 次回以降は通常動作
+window.addEventListener("load", () => {
+  // 初回：6秒後に中央表示
+  setTimeout(() => {
+    if (!hasShownFirst) {
+      showShadowWord(true); // 一度だけ中央に表示
+      hasShownFirst = true;
+    }
+  }, 6000);
+
+  // 以降：通常のランダム配置で定期表示
+  setTimeout(() => {
+    setInterval(() => {
+      showShadowWord(false);
+    }, 6000);
+  }, 13000); // 初回が消えるタイミングに合わせて開始
 });
