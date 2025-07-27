@@ -8,7 +8,7 @@ const words = [
   "呼吸の深さに、\n今日の自分が宿っている",
   "やさしさは、\n焦らないことで育つよ",
   "止まっているように見えても、\nちゃんとあなたは進んでいる",
-  "選ばなくても、選ばれなくても、\n今日がそこにあるって\nすごいこと",
+  "選ばなくても、\n選ばれなくても、\n今日がそこにあるって\nすごいこと",
   "あなたが立っている場所も、\n誰かにとっては\n光かもしれない",
   "心をほどくのに、\n理由なんていらないよ",
   "見えなくても、\n届いているやさしさがある",
@@ -56,6 +56,8 @@ function showShadowWord() {
 }
 
 window.addEventListener("load", () => {
-  showShadowWord(); // 初回すぐ表示
-  setInterval(showShadowWord, 6000); // 6秒ごとに表示
+  setTimeout(() => {
+    showShadowWord(); // 初回1秒遅れ
+    setInterval(showShadowWord, 6000); // 安定表示
+  }, 1000);
 });
