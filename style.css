@@ -14,18 +14,24 @@ body{
 }
 
 .shadow-word {
-    max-width: 80vw;
-    word-wrap: break-word;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
-    transform: translateY(10px);    
     transition: opacity 2s ease-in, transform 2s ease-out;
-    font-size: 1.2rem;
-    color: #1c140f;
+    font-size: 34px;
+    color: #111;
+    text-align: center;
+    max-width: 90vw;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    z-index: 10;
+    text-shadow: 1.5px 1.5px 3px rgba(0,0,0,1);
+    font-family: 'Hiragino Mincho ProN', serif;
     animation: sway 6s ease-in-out infinite;
-    font-size: 30px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,1.5);
     font-weight: 500;
+    line-height: 1.6;
 }
 
 @keyframes sway {
@@ -42,19 +48,18 @@ body{
     animation:backgroundShift 60s ease-in-out infinite
 }
 
-@media screen and (max-width: 480px){
-    .shadow-word{
-        font-size: 20px;
-    }
-}
 
 @media screen and (max-width: 480px){
     .shadow-word {
-        font-size: 30px;
+        font-size: 20px;
         top: 50% !important;
         left: 50% !important;
         transform: translate(-50%, -50%) !important;
         text-align: center;
-        max-width: 90vw;
+        max-width: 96vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        white-space: pre-wrap;
+        line-height: 1.6;
     }
 }
