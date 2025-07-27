@@ -63,6 +63,9 @@ function showShadowWord(centered = false) {
   setTimeout(() => { word.remove(); }, 7000);                 // DOMから削除
 }
 
+if (window.shadowScriptInitialized) return;
+window.shadowScriptInitialized = true;
+
 window.addEventListener("load", () => {
   if (hasInitialized) return;
   hasInitialized = true;
