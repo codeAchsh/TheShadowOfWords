@@ -12,6 +12,8 @@ const words = [
   "あなたが立っている場所も、誰かにとっては光かもしれない"
 ];
 
+
+
 let previousWord = "";
 let hasInitialized = false;
 
@@ -63,8 +65,7 @@ function showShadowWord(centered = false) {
   setTimeout(() => { word.remove(); }, 7000);                 // DOMから削除
 }
 
-if (window.shadowScriptInitialized) return;
-window.shadowScriptInitialized = true;
+console.log("script loaded"); 
 
 window.addEventListener("load", () => {
   if (hasInitialized) return;
