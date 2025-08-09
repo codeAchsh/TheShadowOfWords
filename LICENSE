@@ -1,22 +1,26 @@
-MIT License
+MITライセンス
 
 Copyright (c) 2025 codeAchsh
 
-Permission is hereby granted, free of charge, to any person obtaining a copy  
-of this software and associated documentation files (the "Software"), to deal  
-in the Software without restriction, including without limitation the rights  
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
-copies of the Software, and to permit persons to whom the Software is  
-furnished to do so, subject to the following conditions:
+本ソフトウェアおよび関連するドキュメントファイル（以下「ソフトウェア」）のコピーを取得するすべての人に対し、無償で、以下の条件のもとにソフトウェアを使用、複製、改変、統合、公開、配布、サブライセンス、および販売する権利を許可します。また、ソフトウェアを提供された人にも同様の権利を許可します。
 
-The above copyright notice and this permission notice shall be included in all  
-copies or substantial portions of the Software.
+上記の著作権表示および本許諾表示は、ソフトウェアのすべてのコピーまたは重要な部分に記載されるものとします。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
+本ソフトウェアは「現状のまま」提供されており、商品性、特定目的への適合性、および非侵害についての保証を含め、明示または黙示を問わず、いかなる保証もありません。著作権者または権利者は、契約、不法行為、またはその他の理由による請求、損害、またはその他の責任について、一切の責任を負いません。これは、ソフトウェアまたはその使用、その他の取引に起因または関連するすべての場合に適用されます。
 
-SOFTWARE.
+---
+
+クリエイティブ・コモンズ 表示-非営利 4.0 国際 (CC BY-NC 4.0)
+
+本プロジェクトに含まれる文章、詩的表現、内省的なテキストは、クリエイティブ・コモンズ 表示-非営利 4.0 国際ライセンスのもとに提供されています。
+
+あなたは以下のことができます：
+- 共有 — あらゆる媒体や形式で素材を複製し、再配布することができます
+- 改変 — 素材をリミックス、変形、または基にして制作することができます
+
+以下の条件のもとで：
+- 表示 — 適切なクレジットを表示し、ライセンスへのリンクを提供し、変更があった場合はその旨を示さなければなりません
+- 非営利 — 商業目的でこの素材を使用してはなりません
+
+このライセンスの詳細については、以下をご覧ください：  
+[https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
