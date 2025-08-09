@@ -33,6 +33,15 @@ body{
     font-weight: 500;
     line-height: 1.6;
 }
+footer {
+    background-color: #abc9c9;
+    text-align: center;
+    padding: 2em;
+    font-size: 0.9em;
+    color: #2E2E2E;
+    position: relative;
+    z-index: 1;
+}
 
 @keyframes sway {
     0% { transform: translateY(0px) rotate(0deg); }
