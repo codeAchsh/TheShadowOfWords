@@ -12,26 +12,30 @@ body{
     background-size: cover;
     background-blend-mode: lighten;
 }
-
-.shadow-word {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 2s ease-in, transform 2s ease-out;
-    font-size: 34px;
-    color: #111;
+  .shadow-word {
+    top: 40%;
+    display: flex;
+    justify-content: center;
     text-align: center;
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 200px);
+    overflow: hidden;
+    position: absolute;
+    font-size: 40px;
+    color: #2c2c2c;
     max-width: 90vw;
+    padding-left: 5%;
     word-wrap: break-word;
     white-space: pre-wrap;
     z-index: 10;
     text-shadow: 1.5px 1.5px 3px rgba(0,0,0,1);
-    font-family: 'Hiragino Mincho ProN', serif;
+    font-family: "Lora", serif;
     animation: sway 6s ease-in-out infinite;
     font-weight: 500;
     line-height: 1.6;
+    opacity: 0;
+    transition: opacity 2s ease-in, transform 2s ease-out;
 }
 footer {
     background-color: #abc9c9;
