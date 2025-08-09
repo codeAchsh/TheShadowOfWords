@@ -1,37 +1,64 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>やさしい言葉</title>
-  <meta name="description" content="静かな声でそっと背中を押す、やさしい言葉のWeb空間。" />
+  <title>Soft Echoes</title>
+  <meta name="description" content="A quiet space of gentle words that softly support you with a calm voice." />
 
-  <!-- キーワード -->
-  <meta name="keywords" content="静かな言葉, やさしい声, 癒し,  note, 穏やか, セラピー, 自分と向き合う, HSP, 繊細さん" />
+  <!-- Keywords -->
+  <meta name="keywords" content="gentle words, soft voice, healing, note, calm, therapy, self-reflection, HSP, sensitivity" />
 
-  <!-- SNSでの表示を整える（OpenGraph）-->
-  <meta property="og:title" content="やさしい言葉" />
-  <meta property="og:description" content="静かな声でそっと背中を押す、やさしい言葉のWeb空間。" />
+  <!-- OpenGraph for social media -->
+  <meta property="og:title" content="Gentle Words" />
+  <meta property="og:description" content="A quiet space of gentle words that softly support you with a calm voice." />
   <meta property="og:image" content="https://github.com/codeAchsh/TheShadowOfWords/blob/main/images/banner.png" />
   <meta property="og:url" content="https://note.com/chill_2525" />
   <meta name="twitter:card" content="summary_large_image" />
-  
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0YSPE2JVD7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-0YSPE2JVD7');
-</script>
 
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/x-icon" href="images/MyIcon.ico">
 </head>
 
 <body>
-  <!-- <div id="shadow-area"></div> -->
+  <!-- 🍪 Gentle Consent Banner -->
+  <div id="gentle-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;background:#f5f5f5;border:1px solid #ddd;padding:1em;text-align:center;font-family:'Noto Sans JP', sans-serif;font-size:14px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.1);z-index:999;">
+    この空間では、あなたの体験を穏やかに整えるために、小さな記録を使います。<br />
+    よろしければ「はい」を押してください。
+    <br /><br />
+    <button onclick="acceptConsent()" style="background:#8fb9a8;color:white;border:none;padding:0.5em 1em;border-radius:4px;cursor:pointer;">はい</button>
+  </div>
+
+  <!-- 🍃 Consent Management & Google Analytics -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const consent = localStorage.getItem('gentleConsent');
+      if (!consent) {
+        document.getElementById('gentle-banner').style.display = 'block';
+      } else {
+        loadAnalytics();
+      }
+    });
+
+    function acceptConsent() {
+      localStorage.setItem('gentleConsent', 'true');
+      document.getElementById('gentle-banner').style.display = 'none';
+      loadAnalytics();
+    }
+
+    function loadAnalytics() {
+      const script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XRSJQ29FX4';
+      script.async = true;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XRSJQ29FX4');
+    }
+  </script>
+
   <div id="shadow-area" style="position: relative; width: 100%; height: 100vh;"></div>
   <script src="script.js"></script>
 </body>
