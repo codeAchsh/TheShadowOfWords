@@ -2,42 +2,46 @@ html{
     height: 100%;
     background: linear-gradient(to bottom, #a4c0c0, #a6cdd2) !important; 
 }
-body{
-    height: 100%;
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    font-family: 'Hiragino Mincho ProN', serif;
-    background: linear-gradient(to bottom, #bae2e2, #85aeb6),url(images/bg.jpg) no-repeat center center;
-    background-size: cover;
-    background-blend-mode: lighten;
+ body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100svh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Hiragino Mincho ProN', serif;
+  background: linear-gradient(to bottom, #bae2e2, #85aeb6), url(images/bg.jpg) no-repeat center center;
+  background-size: cover;
+  background-blend-mode: lighten;
+  animation: backgroundShift 60s ease-in-out infinite;
 }
-  .shadow-word {
-    top: 40%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    min-height: calc(100vh - 200px);
-    overflow: hidden;
-    position: absolute;
-    font-size: 40px;
-    color: #2c2c2c;
-    max-width: 90vw;
-    padding-left: 5%;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    z-index: 10;
-    text-shadow: 1.5px 1.5px 3px rgba(0,0,0,1);
-    font-family: "Lora", serif;
-    animation: sway 6s ease-in-out infinite;
-    font-weight: 500;
-    line-height: 1.6;
-    opacity: 0;
-    transition: opacity 2s ease-in, transform 2s ease-out;
+
+.shadow-word {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: max-content;
+  max-width: 90vw;
+
+  font-size: 40px;
+  color: #2c2c2c;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-shadow: 1.5px 1.5px 3px rgba(0,0,0,1);
+  font-family: "Lora", serif;
+  font-weight: 500;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity 2s ease-in, transform 2s ease-out;
+  animation: sway 6s ease-in-out infinite;
+  z-index: 10;
 }
+
 footer {
+    width: 100vw;
     background-color: #abc9c9;
     text-align: center;
     padding: 2em;
@@ -47,10 +51,11 @@ footer {
     z-index: 1;
 }
 
+
 @keyframes sway {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-5px) rotate(-1deg); }
-    100% { transform: translateY(0px) rotate(1deg); }
+  0%   { transform: translate(-50%, -50%) translateY(0px) rotate(0deg); }
+  50%  { transform: translate(-50%, -50%) translateY(-5px) rotate(-1deg); }
+  100% { transform: translate(-50%, -50%) translateY(0px) rotate(1deg); }
 }
 
 @keyframes backgroundShift{
@@ -63,16 +68,10 @@ body{
 
 
 @media screen and (max-width: 480px){
-    .shadow-word {
-        font-size: 20px;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        text-align: center;
-        max-width: 96vw;
-        padding-left: 2vw;
-        padding-right: 2vw;
-        white-space: pre-wrap;
-        line-height: 1.6;
-    }
+  .shadow-word {
+    font-size: 20px;
+    max-width: 96vw;
+    padding: 0 2vw;
+    line-height: 1.6;
+  }
 }
